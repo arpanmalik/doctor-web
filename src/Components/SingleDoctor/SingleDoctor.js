@@ -1,10 +1,14 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Navbar from "../Navbar/Navbar";
 import Searchbar2 from "../Searchbar/Searchbar2";
 import {useNavigate} from "react-router-dom";
 
 const SingleDoctor = () => {
   const navigate = useNavigate();
+
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
 
   const [checkboxes, setCheckboxes] = useState(Array(12).fill(false));
 

@@ -1,11 +1,15 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Navbar from "../Navbar/Navbar";
 import Searchbar from "../Searchbar/Searchbar";
+import Footer from "../Footer/Footer";
 import AppointmentSlider from "./AppointmentSlider";
 import {useNavigate} from "react-router-dom";
 
 const Appointment = () => {
   const navigate = useNavigate();
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
   return (
     <>
       <Navbar />
@@ -38,6 +42,7 @@ const Appointment = () => {
         <AppointmentSlider head="Gynaecologists" />
         <button className="appointment3Btn" onClick={()=>navigate("/appointment-all")}>See All</button>
       </div>
+      <Footer />
     </>
   );
 };

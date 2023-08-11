@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import Searchbar from "../Searchbar/Searchbar";
 import Footer from "../Footer/Footer";
@@ -6,6 +6,9 @@ import Product from "./Product";
 
 const SingleProduct = () => {
   const [num, setNum] = useState(0);
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
   const minusP = () => {
     if (num > 0) {
       setNum((prev) => prev - 1);
@@ -48,7 +51,7 @@ const SingleProduct = () => {
               <div className="singlep8">
                 <p>Quantity:</p>
                 <div className="singlep9">
-                  {num>0 ? <button onClick={minusP}>-</button> : ""}
+                 <button onClick={minusP}>-</button>
                   <p>{num}</p>
                   <button onClick={plusP}>+</button>
                 </div>

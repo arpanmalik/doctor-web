@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Navbar from "../Navbar/Navbar";
 import Searchbar from "../Searchbar/Searchbar2";
 import AppointmentSlider from "./AppointmentSlider";
@@ -7,6 +7,9 @@ import {useNavigate} from "react-router-dom";
 
 const AppointmentAll = ()=>{
     const navigate = useNavigate();
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      },[])
     return (
         <>
             <Navbar />

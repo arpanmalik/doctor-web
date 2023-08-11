@@ -4,9 +4,11 @@ import Searchbar from "../Searchbar/Searchbar";
 import UpperSlider from "./UpperSlider";
 import BottomSlider from "./BottomSlider";
 import Footer from "../Footer/Footer";
+import {useNavigate} from "react-router-dom";
 // import TestSlider from "../TestSlider/TestSlider";
 
 const Home = () => {
+  const navigate = useNavigate();
   const data = [
     {
       image: "./Image/2.png",
@@ -36,7 +38,6 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <hr className="horizontalLine" />
       <Searchbar />
       <UpperSlider />
       <div className="home1">
@@ -49,8 +50,8 @@ const Home = () => {
         <div className="home2">
           {data?.map((ele, i) => (
             <div className="card">
-              <img src={ele?.image} />
-              <button>{ele?.button}</button>
+              <img src={ele?.image} alt=""/>
+              <button onClick={()=>navigate("/appointment")}>{ele?.button}</button>
             </div>
           ))}
         </div>
@@ -78,7 +79,7 @@ const Home = () => {
             </p>
             <hr />
             <div className='testoCard2'>
-              <img src="./Image/15.png" />
+              <img src="./Image/15.png" alt=""/>
               <div className="testoStar">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -95,7 +96,7 @@ const Home = () => {
             </p>
             <hr />
             <div className='testoCard2'>
-              <img src="./Image/15.png" />
+              <img src="./Image/15.png" alt=""/>
               <div className="testoStar">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
